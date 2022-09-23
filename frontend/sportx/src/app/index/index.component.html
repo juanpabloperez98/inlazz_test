@@ -1,0 +1,31 @@
+<div class="container mx-auto my-5">
+    <div *ngIf="loadComponent; else ticketfalse" class="row mx-auto">
+        <!-- *ngIf="loadComponent; else ticketfalse" -->
+        <div *ngFor="let ticket of pqr_model" class="col-lg-4 container-card text-left">
+            <div  class="card mx-auto text-light" style="width: 14rem; background-color: rgb(69, 68, 68);">
+                <div class="card-body">
+                  <h5 class="card-title">{{ ticket.title }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ ticket.names_customer }} {{ ticket.last_names_customer }}</h6>
+                  <p class="card-text my-3">
+                    Estado: 
+                    <span *ngIf="ticket.status == 0; else statusClose" style="background-color: greenyellow; padding: 7px; border-radius: 10px;">Abierto</span>
+                    <ng-template #statusClose>
+                        <span style="background-color: red; padding: 7px; border-radius: 10px;">Cerrado</span>
+                    </ng-template>
+                  </p>
+                  <div class="mt-4">
+                    <a href="#" class="card-link">Ver</a>
+                    <a href="#" class="card-link">Eliminar</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #ticketfalse>
+        <div class="row mx-auto">
+            <div class="col-lg-6 mx-auto text-center ticketsFalse">
+                <h3>No hay Tickets creados</h3>
+            </div>
+        </div>
+    </ng-template>
+</div>

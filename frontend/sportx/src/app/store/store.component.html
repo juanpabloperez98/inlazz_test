@@ -1,0 +1,57 @@
+<div class="container mx-auto my-5">
+    <div class="col-lg-12 text-left">
+        <div class="text-center">
+            <h3>Agregar Ticket</h3>
+        </div>
+        <form class="w-50 mx-auto p-5" 
+        [formGroup]="ticketForm"
+        (ngSubmit)="ticketSubmit()"
+        >
+            <div class="form-group">
+              <label for="identification">Identidicación</label>
+              <input type="text" class="form-control" id="identification" placeholder="108823144" required
+              formControlName="identification">
+            </div>
+            <div class="form-group">
+              <label for="type_identification">Tipo de identificacion</label>
+              <select class="form-control" id="type_identification" formControlName="type_identification" required>
+                <option value="0" selected>Cedula de ciudadania</option>
+                <option value="1">Tarjeta de identidad</option>
+                <option value="2">Cedula de Extranjería</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="names">Nombres</label>
+                <input type="text" class="form-control" id="names" placeholder="Jose" formControlName="names" required>
+              </div>
+            <div class="form-group">
+                <label for="last_names">Apellidos</label>
+                <input type="text" class="form-control" id="last_names" placeholder="Hernandez" formControlName="last_names" required>
+            </div>
+            <div class="form-group">
+                <label for="cellphone">Numero celular</label>
+                <input type="text" class="form-control" id="cellphone" placeholder="+57 3194858756" formControlName="cellphone" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Numero telefonico fijo</label>
+                <input type="text" class="form-control" id="phone" placeholder="335647" formControlName="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="juan@gmail.com" formControlName="email" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Titulo ticket</label>
+                <input type="text" class="form-control" id="title" placeholder="Titulo del ticket" formControlName="title" required>
+            </div>
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <textarea class="form-control" id="description" rows="3" formControlName="description" required>
+              </textarea>
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-success m-r-5 waves-effect waves-light">Guardar</button>
+            </div>
+          </form>
+    </div>
+</div>

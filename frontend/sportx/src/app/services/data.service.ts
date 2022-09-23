@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +22,11 @@ export class DataService {
   public getData( endPoint: string ){
     const url = `${this.url}/${endPoint}`;
     return this.httpClient.get(url, {headers: this.securityHeaders});
+  }
+
+  public postData( endPoint: string,  body: HttpParams){
+    const url = `${this.url}/${endPoint}`;
+    return this.httpClient.post(url, body, { headers: this.securityHeaders });
   }
 
 }

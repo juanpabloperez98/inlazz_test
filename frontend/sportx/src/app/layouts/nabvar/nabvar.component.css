@@ -1,0 +1,22 @@
+img{
+    width: 50px;
+}
+
+nav a{
+    color: white !important;
+    display: inline-block;
+}
+nav a:hover{
+    font-size: 19px;
+}
+
+.router-link-active{
+    background-color: rgb(182, 195, 195);
+    border-radius: 20px;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.router-link-active img{
+    width: 40px;
+}
