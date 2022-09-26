@@ -1,4 +1,8 @@
-from api.helpers import get_choices, to_lower, to_int
+import sys
+import traceback
+
+
+from api.helpers import get_choices, to_int, to_lower
 from api.models import Pqr
 from api.serializers import PqrSerializer
 from cerberus import Validator
@@ -8,7 +12,6 @@ from django.utils.timezone import datetime
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 
 
 class PqrAPI(APIView):
@@ -40,6 +43,7 @@ class PqrAPI(APIView):
             "type_identification":{
                 "required":True,
                 "type": "integer",
+                "coerce": to_int,
                 "allowed":Pqr.TypeIdentification.values,
             },
             "names_customer":{
@@ -91,7 +95,12 @@ class PqrAPI(APIView):
             )
 
         except Exception as e:
-            print(e)
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            e = traceback.format_exception(
+                etype=exc_type,
+                value=exc_value,
+                tb=exc_traceback,
+            )
             return Response(
                 data={
                     "message": "Some is wrong",
