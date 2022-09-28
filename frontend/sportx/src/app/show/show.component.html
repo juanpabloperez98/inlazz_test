@@ -1,0 +1,31 @@
+<div class="container mx-auto my-5">
+    <div class="col-lg-12 text-right">
+        <a id="back" href="#">
+            <img src="../../assets/images/back.png" alt="back-arrow">
+            Atras
+        </a>
+    </div>
+    <div class="col-lg-12 mt-3">
+        <div class="card mx-auto" style="width: 24rem;">
+            <div class="card-header text-center">
+                {{ pqrModel.email }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ pqrModel.title }}</h5>
+                <p class="card-text text-left">
+                    Estado: 
+                    <span *ngIf="pqrModel.status == 0; else statusClose" style="background-color: greenyellow; padding: 7px; border-radius: 10px; color: white;">Abierto</span>
+                    <ng-template #statusClose>
+                        <span style="background-color: red; padding: 7px; border-radius: 10px; color: white;">Cerrado</span>
+                    </ng-template>
+                </p>
+                <p class="card-text text-left">
+                    {{ pqrModel.description }}
+                </p>
+            </div>
+            <div class="card-footer text-muted">
+                {{ pqrModel.names_customer }} {{ pqrModel.last_names_customer }}
+            </div>
+        </div>
+    </div>
+</div>

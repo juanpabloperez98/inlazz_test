@@ -11,12 +11,14 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreComponent } from './store/store.component';
+import { ShowComponent } from './show/show.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
     StoreComponent,
+    ShowComponent,
   ],
   imports: [
     BrowserModule,

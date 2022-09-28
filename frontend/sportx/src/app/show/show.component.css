@@ -1,0 +1,14 @@
+#back{
+    background-color: goldenrod;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 180px;
+    margin-left: auto;
+}
+#back:hover{
+    background-color: rgb(255, 202, 70);
+    color: white;
+}

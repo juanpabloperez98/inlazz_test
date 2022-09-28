@@ -24,6 +24,11 @@ export class DataService {
     return this.httpClient.get(url, {headers: this.securityHeaders});
   }
 
+  public getDataParams( endPoint: string, params:HttpParams ){
+    const url = `${this.url}/${endPoint}`;
+    return this.httpClient.get(url, {headers: this.securityHeaders, params});
+  }
+
   public postData( endPoint: string,  body: Record<string, string | number | any>){
     const url = `${this.url}/${endPoint}`;
     return this.httpClient.post(url, body, { headers: this.securityHeaders });
